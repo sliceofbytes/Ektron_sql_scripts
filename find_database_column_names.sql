@@ -1,0 +1,24 @@
+/* look for table column names */
+
+--USE <database name>;
+
+SELECT
+		 TABLE_NAME
+		,COLUMN_NAME
+		,DATA_TYPE
+		,CHARACTER_MAXIMUM_LENGTH
+FROM
+		INFORMATION_SCHEMA.COLUMNS
+WHERE
+--    COLUMN_NAME LIKE '%%'
+--AND TABLE_NAME LIKE '%_tbl'
+--AND (TABLE_NAME  LIKE '%%' OR COLUMN_NAME LIKE '%template%')
+--AND
+      (
+        COLUMN_NAME LIKE '%%' OR TABLE_NAME LIKE '%%'
+      )
+AND COLUMN_NAME LIKE '%%'
+AND TABLE_NAME NOT LIKE '%_tracking'
+ORDER BY
+		TABLE_NAME, COLUMN_NAME
+;

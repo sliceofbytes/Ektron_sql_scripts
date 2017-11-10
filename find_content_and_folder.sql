@@ -11,7 +11,8 @@ SELECT ct.content_id
 --      ,ct.content_subtype
 --      ,fr.folder_name
 --      ,fr.inherit_alias_from
-      ,fr.FolderPath, fr.folder_id
+      ,fr.FolderPath
+      ,fr.folder_id
       ,ct.content_html
 --      ,ct.last_edit_date
 --      ,ct.last_edit_lname + ', ' + ct.last_edit_fname as edited_by
